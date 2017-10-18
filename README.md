@@ -1,4 +1,4 @@
-# movie-roulette
+# Movie Roulette
 Movie Roulette picks a movie or TV show recommendation randomly
 
 Features: 
