@@ -7,7 +7,6 @@ Features:
 
 PREVIEW: 
 https://www.fluidui.com/editor/live/preview/cF9CQko3VnJMODdhQTlUeWY1dHZWZGl5NVhPWlFhZ1ExUQ==
-
 //for registered users only :(
 
 ![alt text](https://github.com/amusinger/movie-roulette/blob/master/preview.png)
