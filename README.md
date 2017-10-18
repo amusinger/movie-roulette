@@ -9,6 +9,8 @@ PREVIEW:
 https://www.fluidui.com/editor/live/preview/cF9CQko3VnJMODdhQTlUeWY1dHZWZGl5NVhPWlFhZ1ExUQ==
 //for registered users only :(
 
+![alt text](https://github.com/amusinger/movie-roulette/blob/master/preview.png)
+
 UML: https://go.gliffy.com/go/share/s8sl0oupe9o66c82knc5 (doesn't work apparently)
 
 ![alt text](https://github.com/amusinger/movie-roulette/blob/master/uml-v1.png)
