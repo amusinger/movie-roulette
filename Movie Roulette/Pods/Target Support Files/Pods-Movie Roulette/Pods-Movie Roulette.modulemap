@@ -1,0 +1,6 @@
+framework module Pods_Movie_Roulette {
+  umbrella header "Pods-Movie Roulette-umbrella.h"
+
+  export *
+  module * { export * }
+}
