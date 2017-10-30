@@ -10,15 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var randomMovie: Movie? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         APIManager.getMovies {
             (result) in
-            print("heeeey")
-            print(result)
+            self.randomMovie = result as? Movie
+
+            print(self.randomMovie?.overview)
+            
+            
         }
+       
     }
 
     override func didReceiveMemoryWarning() {
