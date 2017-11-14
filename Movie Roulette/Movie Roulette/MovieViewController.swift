@@ -12,9 +12,19 @@ import UIKit
 class MovieViewController: UIViewController {
     
     var movie: Movie? = nil
-    
+    var wishlist = Wishlist()
     override func viewDidLoad() {
         super.viewDidLoad()
-       print("showmovie ", movie?.original_title)
+        print("showmovie ", movie?.original_title)
+    }
+    
+    func addToList(){
+        wishlist.wishlist.append(movie!)
+    }
+    
+    func openList(){
+        let VC = self.storyboard?.instantiateViewController(withIdentifier: "WatchlistViewController") as! WatchlistViewController
+        VC.movie = self.movie
+        self.navigationController?.pushViewController(VC, animated: true)
     }
 }

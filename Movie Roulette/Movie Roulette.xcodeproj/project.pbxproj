@@ -12,6 +12,7 @@
 		FC036AE71F9ED7F5009A91B7 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC036AE61F9ED7F5009A91B7 /* Movie.swift */; };
 		FCBD23B11FBA863000EE9DB8 /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD23B01FBA863000EE9DB8 /* Wishlist.swift */; };
 		FCBD23B31FBA9F8D00EE9DB8 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD23B21FBA9F8D00EE9DB8 /* MovieViewController.swift */; };
+		FCBD23B51FBAAFAC00EE9DB8 /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD23B41FBAAFAC00EE9DB8 /* WatchlistViewController.swift */; };
 		FCBEA0ED1F9E179E009DECCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBEA0EC1F9E179E009DECCA /* AppDelegate.swift */; };
 		FCBEA0EF1F9E179E009DECCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBEA0EE1F9E179E009DECCA /* ViewController.swift */; };
 		FCBEA0F21F9E179E009DECCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBEA0F01F9E179E009DECCA /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		FC036AE61F9ED7F5009A91B7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FCBD23B01FBA863000EE9DB8 /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
 		FCBD23B21FBA9F8D00EE9DB8 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		FCBD23B41FBAAFAC00EE9DB8 /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
 		FCBEA0E91F9E179E009DECCA /* Movie Roulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Roulette.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBEA0EC1F9E179E009DECCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBEA0EE1F9E179E009DECCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				FCE89A191FBA030B002A8061 /* Genre.swift */,
 				FCBD23B01FBA863000EE9DB8 /* Wishlist.swift */,
 				FCBD23B21FBA9F8D00EE9DB8 /* MovieViewController.swift */,
+				FCBD23B41FBAAFAC00EE9DB8 /* WatchlistViewController.swift */,
 			);
 			path = "Movie Roulette";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				FCBD23B11FBA863000EE9DB8 /* Wishlist.swift in Sources */,
 				FC036AE51F9ED5FE009A91B7 /* APIManager.swift in Sources */,
+				FCBD23B51FBAAFAC00EE9DB8 /* WatchlistViewController.swift in Sources */,
 				FCBEA0EF1F9E179E009DECCA /* ViewController.swift in Sources */,
 				FCBD23B31FBA9F8D00EE9DB8 /* MovieViewController.swift in Sources */,
 				FC036AE71F9ED7F5009A91B7 /* Movie.swift in Sources */,

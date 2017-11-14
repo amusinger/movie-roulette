@@ -51,7 +51,7 @@ public class APIManager : NSObject {
                 "vote_average.gte": selectedScore,
                 "with_genres": selectedGenre
             ]
-
+        var randomMovie: Movie? = nil
         Alamofire.request("https://api.themoviedb.org/3/discover/movie?", parameters: parameters).responseJSON { response in
             //debugPrint(response)
             switch response.result {
@@ -63,14 +63,15 @@ public class APIManager : NSObject {
                     let movies = result["results"] as? [Any]
                     let d = movies![0] as AnyObject
                     
-                    let randomMovie = Movie(original_title: d["title"] as! String, overview: d["overview"] as! String, vote_average: d["vote_average"] as! Float, poster_path: d["poster_path"] as! String, genre_ids: d["genre_ids"] as! [Int], genres: [])
+                    randomMovie = Movie(original_title: d["title"] as! String, overview: d["overview"] as! String, vote_average: d["vote_average"] as! Float, poster_path: d["poster_path"] as! String, genre_ids: d["genre_ids"] as! [Int], genres: [])
                     
                     //self.getGenres(genre_ids: d["genre_ids"] as! [Int])
 //                    print(randomMovie.original_title)
-                    Closure(randomMovie)
+                    Closure(randomMovie!)
                 }
                 else{
-                    print("try again")
+                   
+                    Closure(nil)
                 }
                 
                 

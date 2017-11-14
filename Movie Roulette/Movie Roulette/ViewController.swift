@@ -7,7 +7,7 @@
 //
 
 import UIKit
-public typealias CompletionClosure = (_ res: AnyObject) -> Void
+public typealias CompletionClosure = (_ res: AnyObject?) -> Void
 class ViewController: UIViewController {
 
     var randomMovie: Movie? = nil
@@ -48,12 +48,19 @@ class ViewController: UIViewController {
                 }
                 else{
                     print("smth went wrong")
+                    self.reset()
                 }
             }
         }
         else{
             print("couldn't load genres")
         }
+    }
+    
+    func reset(){
+        self.year = ""
+        self.score = ""
+        self.genre = ""
     }
     
     func activityLoader(){
@@ -82,8 +89,13 @@ class ViewController: UIViewController {
                         }
                     }
                 }
+                 completion(true)
             }
-             completion(true)
+            if(self.randomMovie == nil){
+                print("request is too unique like you")
+                completion(false)
+            }
+            
         }
         
         completion(false)
