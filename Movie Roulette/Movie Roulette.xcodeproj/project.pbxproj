@@ -10,6 +10,8 @@
 		51FC9EFE597D1EECC69DAE92 /* Pods_Movie_Roulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30CDB54CAC73C00079D6589 /* Pods_Movie_Roulette.framework */; };
 		FC036AE51F9ED5FE009A91B7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC036AE41F9ED5FE009A91B7 /* APIManager.swift */; };
 		FC036AE71F9ED7F5009A91B7 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC036AE61F9ED7F5009A91B7 /* Movie.swift */; };
+		FCBD23B11FBA863000EE9DB8 /* Wishlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD23B01FBA863000EE9DB8 /* Wishlist.swift */; };
+		FCBD23B31FBA9F8D00EE9DB8 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD23B21FBA9F8D00EE9DB8 /* MovieViewController.swift */; };
 		FCBEA0ED1F9E179E009DECCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBEA0EC1F9E179E009DECCA /* AppDelegate.swift */; };
 		FCBEA0EF1F9E179E009DECCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBEA0EE1F9E179E009DECCA /* ViewController.swift */; };
 		FCBEA0F21F9E179E009DECCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBEA0F01F9E179E009DECCA /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		F9A4B3800E3ED7FA93FFD912 /* Pods-Movie Roulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Roulette.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Roulette/Pods-Movie Roulette.release.xcconfig"; sourceTree = "<group>"; };
 		FC036AE41F9ED5FE009A91B7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FC036AE61F9ED7F5009A91B7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FCBD23B01FBA863000EE9DB8 /* Wishlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wishlist.swift; sourceTree = "<group>"; };
+		FCBD23B21FBA9F8D00EE9DB8 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		FCBEA0E91F9E179E009DECCA /* Movie Roulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Roulette.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBEA0EC1F9E179E009DECCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBEA0EE1F9E179E009DECCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 				FC036AE41F9ED5FE009A91B7 /* APIManager.swift */,
 				FC036AE61F9ED7F5009A91B7 /* Movie.swift */,
 				FCE89A191FBA030B002A8061 /* Genre.swift */,
+				FCBD23B01FBA863000EE9DB8 /* Wishlist.swift */,
+				FCBD23B21FBA9F8D00EE9DB8 /* MovieViewController.swift */,
 			);
 			path = "Movie Roulette";
 			sourceTree = "<group>";
@@ -226,8 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCBD23B11FBA863000EE9DB8 /* Wishlist.swift in Sources */,
 				FC036AE51F9ED5FE009A91B7 /* APIManager.swift in Sources */,
 				FCBEA0EF1F9E179E009DECCA /* ViewController.swift in Sources */,
+				FCBD23B31FBA9F8D00EE9DB8 /* MovieViewController.swift in Sources */,
 				FC036AE71F9ED7F5009A91B7 /* Movie.swift in Sources */,
 				FCBEA0ED1F9E179E009DECCA /* AppDelegate.swift in Sources */,
 				FCE89A1A1FBA030B002A8061 /* Genre.swift in Sources */,
