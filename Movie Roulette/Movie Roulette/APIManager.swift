@@ -29,7 +29,7 @@ public class APIManager : NSObject {
             selectedScore = String(Int(arc4random_uniform(10 - 5) + 5))
             print("score ", selectedScore)
         }
-        if(selectedGenre == ""){
+        if(selectedGenre == "" || selectedGenre == "Random"){
             let random = Int(arc4random_uniform(UInt32(genres.count-1)))
             let randomGenre = genres[random]
             

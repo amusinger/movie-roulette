@@ -16,12 +16,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Genre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ax-ZP-dSI">
+                                <rect key="frame" x="90" y="309" width="195" height="30"/>
+                                <accessibility key="accessibilityConfiguration" label="Select genre">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IM-tL-5Mz">
+                                <rect key="frame" x="40" y="119" width="295" height="61"/>
+                                <string key="text">Wondering what to watch?
+Play our Movie Roulette and let us pick a movie or TV show randomly for you! </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Specify any criteria or try your luck right now" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0E-oj-Ybj">
+                                <rect key="frame" x="40" y="226" width="295" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIE ROULETTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8E-PF-AUy">
+                                <rect key="frame" x="107" y="80" width="161" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pf-Cn-gaG">
+                                <rect key="frame" x="100" y="557" width="175" height="30"/>
+                                <state key="normal" title="SPIN"/>
+                                <connections>
+                                    <action selector="pressButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0TN-XH-3uc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F8E-PF-AUy" secondAttribute="trailing" constant="107" id="3cq-hs-JlA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V0E-oj-Ybj" secondAttribute="trailing" constant="40" id="3fX-Q9-8l7"/>
+                            <constraint firstItem="7IM-tL-5Mz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5Ak-Fu-UIm"/>
+                            <constraint firstItem="3Ax-ZP-dSI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="5Ie-M4-Agn"/>
+                            <constraint firstItem="7IM-tL-5Mz" firstAttribute="top" secondItem="F8E-PF-AUy" secondAttribute="bottom" constant="17.500000000000114" id="Asv-qV-07B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Pf-Cn-gaG" secondAttribute="trailing" constant="100" id="DX2-7w-dz7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Ax-ZP-dSI" secondAttribute="trailing" constant="90" id="Iys-Ed-MTl"/>
+                            <constraint firstItem="1Pf-Cn-gaG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="LPV-Uj-SQo"/>
+                            <constraint firstItem="F8E-PF-AUy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="QJZ-RO-j9C"/>
+                            <constraint firstItem="V0E-oj-Ybj" firstAttribute="top" secondItem="7IM-tL-5Mz" secondAttribute="bottom" constant="46" id="QhE-Z6-HeG"/>
+                            <constraint firstItem="3Ax-ZP-dSI" firstAttribute="top" secondItem="V0E-oj-Ybj" secondAttribute="bottom" constant="42" id="Vcz-hG-sym"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7IM-tL-5Mz" secondAttribute="trailing" constant="40" id="Vmy-mI-D6L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Pf-Cn-gaG" secondAttribute="bottom" constant="80" id="XM3-hH-kJF"/>
+                            <constraint firstItem="F8E-PF-AUy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="fu2-vb-4V3"/>
+                            <constraint firstItem="V0E-oj-Ybj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="sZm-3O-hBc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pickGenreTextField" destination="3Ax-ZP-dSI" id="gCG-FW-sXw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="127.28635682158921"/>
         </scene>
     </scenes>
 </document>
