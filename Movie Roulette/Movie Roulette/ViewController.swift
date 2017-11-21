@@ -10,24 +10,23 @@ import UIKit
 public typealias CompletionClosure = (_ res: AnyObject?) -> Void
 class ViewController: UIViewController {
     
-    
-   
     @IBOutlet weak var pickGenreTextField: UITextField!
-    
-    //    @IBOutlet weak var genrePicker: UIPickerView!
+ 
+    @IBOutlet weak var scorePickerView: UIPickerView!
     var randomMovie: Movie? = nil
     var genres: [Genre] = []
+    let scores = ["Random", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     var year = "2017"
-    var score = "5"
+    var score = ""
     var genre = ""
     
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     var pickerDataSource: [String] =  ["Random"]
-    //    {
-    //        didSet {
-    //            genrePicker.reloadAllComponents()
-    //        }
-    //    }
+    
+//    let scorePickerView = UIPickerView()
+    var rotationAngle: CGFloat = 0.0
+    let scorePickerViewWidth: CGFloat = 150
+    let scorePickerViewHeight: CGFloat = 100
     
     override func viewDidLoad() {
         
@@ -37,6 +36,7 @@ class ViewController: UIViewController {
         //        genrePicker.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.createScorePicker()
         
         self.getGenres() { (success) -> Void in
             if success {
@@ -54,6 +54,19 @@ class ViewController: UIViewController {
         
         
         //print("after getGenres ", self.randomMovie?.original_title as Any)
+    }
+    
+    func createScorePicker(){
+        scorePickerView.delegate = self
+        scorePickerView.dataSource = self
+        
+        rotationAngle = -90*(.pi/180)
+        scorePickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        let y = scorePickerView.frame.origin.y
+        scorePickerView.frame = CGRect(x: 0, y:y+150, width: view.frame.width, height: 50)
+
+////        scorePickerView.center = self.view.center
+//        self.view.addSubview(scorePickerView)
     }
     func createGenrePicker(){
         let genrePicker = UIPickerView()
@@ -176,26 +189,12 @@ class ViewController: UIViewController {
     
     func showMovie(){
         print("-------second task------")
-        print(self.randomMovie?.original_title)
-        //        let VC = self.storyboard?.instantiateViewController(withIdentifier: "MovieViewController") as! MovieViewController
-        //        VC.movie = self.randomMovie
-        //        self.navigationController?.pushViewController(VC, animated: true)
+        print(self.randomMovie?.original_title as Any)
+                let VC = self.storyboard?.instantiateViewController(withIdentifier: "MovieViewController") as! MovieViewController
+                VC.movie = self.randomMovie
+                self.navigationController?.pushViewController(VC, animated: true)
     }
     
-    
-    
-    //    func matchMoviewWithGenres(){
-    //        for genre in self.genres{
-    //            for id in (self.randomMovie?.genre_ids)!{
-    //                if(genre.id == id){
-    //                    self.randomMovie?.genres.append(genre.name)
-    //                    print("matchMoviewWithGenres ", self.randomMovie?.genres as Any)
-    //
-    //                }
-    //            }
-    //        }
-    //
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -211,37 +210,82 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(pickerView == scorePickerView){
+            return scores.count
+        }
+        
         return pickerDataSource.count;
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerDataSource[row]
+        if(pickerView == scorePickerView){
+            return scores[row]
+        }
+        else{
+            return pickerDataSource[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(pickerDataSource[row])
-        for i in self.genres{
-            if(pickerDataSource[row] == i.name){
-                self.genre = String(i.id)
-            }
+        if(pickerView == scorePickerView){
+            self.score = scores[row]
         }
-        pickGenreTextField.text = pickerDataSource[row]
+        else{
+            print(pickerDataSource[row])
+            for i in self.genres{
+                if(pickerDataSource[row] == i.name){
+                    self.genre = String(i.id)
+                }
+            }
+            pickGenreTextField.text = pickerDataSource[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label: UILabel
-        
         if let view = view as? UILabel{
             label = view
         } else{
             label = UILabel()
         }
-        label.textColor = .green
         label.textAlignment = .center
         label.font = UIFont(name: "Menlo-Regular", size: 17)
+        if(pickerView == scorePickerView){
+            
+            let view = UIView()
+            view.frame = CGRect(x: 0, y: 0, width: scorePickerViewWidth, height: scorePickerViewHeight)
+            label.frame = CGRect(x: 0, y: 0, width: scorePickerViewWidth, height: scorePickerViewHeight)
+            label.text = scores[row]
+            view.addSubview(label)
+            
+            view.transform = CGAffineTransform(rotationAngle: 90*(.pi/180))
+            return view
+        }
+         else{
+            label.textColor = .green
+            label.text = pickerDataSource[row]
+           
+        }
+         return label
         
-        label.text = pickerDataSource[row]
-        return label
+        
     }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        if(pickerView == scorePickerView){
+            return 50
+        }
+        return 50
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        if(pickerView == scorePickerView){
+            return 70
+        }
+        return 100
+    }
+    
+    
+    
 }
 

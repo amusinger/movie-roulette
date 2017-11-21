@@ -25,7 +25,7 @@ public class APIManager : NSObject {
             selectedYear = String(x)
             print("year ", selectedYear)
         }
-        if(selectedScore == ""){
+        if(selectedScore == "" || selectedScore == "Random"){
             selectedScore = String(Int(arc4random_uniform(10 - 5) + 5))
             print("score ", selectedScore)
         }

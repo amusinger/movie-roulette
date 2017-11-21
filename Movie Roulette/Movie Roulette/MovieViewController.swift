@@ -15,7 +15,7 @@ class MovieViewController: UIViewController {
     var wishlist = Wishlist()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("showmovie ", movie?.original_title)
+        print("showmovie ", movie?.original_title as Any)
     }
     
     func addToList(){
