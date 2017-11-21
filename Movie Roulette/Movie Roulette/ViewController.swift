@@ -12,8 +12,8 @@ class ViewController: UIViewController {
 
     var randomMovie: Movie? = nil
     var genres: [Genre] = []
-    var year = ""
-    var score = ""
+    var year = "2017"
+    var score = "9"
     var genre = ""
     
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
