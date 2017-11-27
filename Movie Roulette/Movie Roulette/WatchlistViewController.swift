@@ -13,11 +13,19 @@ class WatchlistViewController: UIViewController {
     
 //    var userdefaults = UserDefaults.standardUserDefaults
 //    var moviesToWatch: [Movie] = userdefaults.objectForKey("key") as NSArray
+    
+    
     var moviesToWatch: [Movie] = []
     var movie: Movie!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        UserDefaults.standard.set(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+//        
+//        let movies = UserDefaults.standard.value(forKey: <#T##String#>) 
+//    
+        
         
         moviesToWatch.append(movie)
         self.save()

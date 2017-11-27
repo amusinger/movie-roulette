@@ -63,7 +63,7 @@ public class APIManager : NSObject {
                     let movies = result["results"] as? [Any]
                     let d = movies![0] as AnyObject
                     
-                    randomMovie = Movie(original_title: d["title"] as! String, overview: d["overview"] as! String, vote_average: d["vote_average"] as! Float, poster_path: d["poster_path"] as! String, genre_ids: d["genre_ids"] as! [Int], genres: [])
+                    randomMovie = Movie(original_title: d["title"] as! String, overview: d["overview"] as! String, vote_average: d["vote_average"] as! Float, poster_path: d["poster_path"] as! String, release_date: d["release_date"] as! String, genre_ids: d["genre_ids"] as! [Int], genres: [])
                     
                     //self.getGenres(genre_ids: d["genre_ids"] as! [Int])
 //                    print(randomMovie.original_title)

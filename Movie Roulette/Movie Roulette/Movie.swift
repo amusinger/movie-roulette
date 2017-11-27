@@ -16,16 +16,19 @@ class Movie{
     var poster_path: String = ""
     var genre_ids: [Int] = []
     var genres: [String] = []
+    var release_date: String = ""
     
     public init(original_title:String, overview:String,
-                vote_average:Float, poster_path:String,
+                vote_average:Float, poster_path:String, release_date:String,
                 genre_ids:[Int], genres: [String]){
         self.original_title = original_title
         self.overview = overview
         self.vote_average = vote_average
         self.poster_path = poster_path
+        self.release_date = release_date
         self.genre_ids = genre_ids
         self.genres = genres
+        
         
     }
 }

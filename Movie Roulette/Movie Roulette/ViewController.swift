@@ -11,17 +11,22 @@ public typealias CompletionClosure = (_ res: AnyObject?) -> Void
 class ViewController: UIViewController {
     
     @IBOutlet weak var pickGenreTextField: UITextField!
- 
+    @IBOutlet weak var pickYearTextField: UITextField!
     @IBOutlet weak var scorePickerView: UIPickerView!
+    let yearPicker = UIPickerView()
+    
     var randomMovie: Movie? = nil
     var genres: [Genre] = []
-    let scores = ["Random", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    let scores = ["1", "2", "3", "4", "5", "Random", "6", "7", "8", "9"]
+    var years:[String] = ["Random"]
     var year = "2017"
     var score = ""
     var genre = ""
     
+   
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     var pickerDataSource: [String] =  ["Random"]
+    var yearDataSource: [String] =  ["Random"]
     
 //    let scorePickerView = UIPickerView()
     var rotationAngle: CGFloat = 0.0
@@ -32,16 +37,16 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        //        genrePicker.delegate=self
-        //        genrePicker.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
         
         self.createScorePicker()
+        self.createYearPicker()
+        self.createToolbar()
         
         self.getGenres() { (success) -> Void in
             if success {
                 self.createGenrePicker()
-                self.createToolbar()
+                
                 // do second task if success
                 
                 //                print(self.pickerDataSource)
@@ -55,15 +60,22 @@ class ViewController: UIViewController {
         
         //print("after getGenres ", self.randomMovie?.original_title as Any)
     }
-    
+    func createYearPicker(){
+        for i in 1950...2017 {
+            years.append(String(i))
+        }
+        yearPicker.delegate = self
+        pickYearTextField.inputView = yearPicker
+        yearPicker.backgroundColor = .black
+    }
     func createScorePicker(){
         scorePickerView.delegate = self
         scorePickerView.dataSource = self
-        
+        scorePickerView.selectRow(5, inComponent: 0, animated: false)
         rotationAngle = -90*(.pi/180)
         scorePickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
         let y = scorePickerView.frame.origin.y
-        scorePickerView.frame = CGRect(x: 0, y:y+150, width: view.frame.width, height: 50)
+        scorePickerView.frame = CGRect(x: 0, y:y+120, width: view.frame.width, height: 50)
 
 ////        scorePickerView.center = self.view.center
 //        self.view.addSubview(scorePickerView)
@@ -94,6 +106,7 @@ class ViewController: UIViewController {
         toolbar.isUserInteractionEnabled = true
         
         pickGenreTextField.inputAccessoryView = toolbar
+        pickYearTextField.inputAccessoryView = toolbar
     }
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -213,6 +226,9 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         if(pickerView == scorePickerView){
             return scores.count
         }
+        if(pickerView == yearPicker){
+            return years.count
+        }
         
         return pickerDataSource.count;
     }
@@ -220,6 +236,9 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if(pickerView == scorePickerView){
             return scores[row]
+        }
+        else if(pickerView == yearPicker){
+            return years[row]
         }
         else{
             return pickerDataSource[row]
@@ -229,6 +248,10 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(pickerView == scorePickerView){
             self.score = scores[row]
+        }
+        else if(pickerView == yearPicker){
+            self.year = years[row]
+            pickYearTextField.text = years[row]
         }
         else{
             print(pickerDataSource[row])
@@ -261,6 +284,11 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
             view.transform = CGAffineTransform(rotationAngle: 90*(.pi/180))
             return view
         }
+        else if (pickerView == yearPicker){
+            label.textColor = .green
+            label.text = years[row]
+        }
+            
          else{
             label.textColor = .green
             label.text = pickerDataSource[row]
@@ -273,14 +301,14 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         if(pickerView == scorePickerView){
-            return 50
+            return 70
         }
         return 50
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         if(pickerView == scorePickerView){
-            return 70
+            return 50
         }
         return 100
     }
